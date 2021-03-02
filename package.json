@@ -1,0 +1,25 @@
+{
+  "name": "url-shortening-api-master",
+  "version": "1.0.0",
+  "description": "![Design preview for the Shortly URL shortening API coding challenge](./design/desktop-preview.jpg)",
+  "main": "logic.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack src/js/app.js dist/bundle.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amikus123/url-shotnerer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amikus123/url-shotnerer/issues"
+  },
+  "homepage": "https://github.com/amikus123/url-shotnerer#readme",
+  "devDependencies": {
+    "webpack": "^5.24.2"
+  }
+}

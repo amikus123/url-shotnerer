@@ -59,7 +59,23 @@ const baseUrl = `https://api.shrtco.de/v2/shorten?url=`;
 const form = document.getElementById("form");
 const text = document.getElementById("text");
 const list = document.getElementById("list");
+const copy = (short,but) =>{
+  let curr = localStorage.getItem("pages");
+  curr = JSON.parse(curr);
+  const notCopy = og =>{
+    return og.short === short;
+  }
+  curr = curr.filter(notCopy)
+  console.log(curr,but)
+  but.style="background-color:hsl(257, 27%, 26%);"
+  but.innerHTML = "Copied!"
 
+  setTimeout(()=>{
+    but.style=""
+    but.innerHTML = "Copy it!"
+  },3000)
+
+}
 // this function adds element to html, shoudl be reun after every call and upon refreshing
 const addToHTML = (og, short) => {
   // it is used to get item index at the time of creation
@@ -74,19 +90,22 @@ const addToHTML = (og, short) => {
   fl.innerHTML = og;
   // copy link
   const sl = document.createElement("span");
+  const cop = document.createElement("button");
   sl.classList = "second-link";
   sl.innerHTML = short;
+  sl.addEventListener('click',()=>copy(short,cop))
   // copy buttonm
-  const cop = document.createElement("button");
   cop.classList = "square copy";
   cop.innerHTML = "Copy&nbsp;it!";
+  cop.addEventListener('click',()=>copy(short,cop))
+
   // delete button
   const del = document.createElement("button");
   del.classList = "square red delete";
   del.innerHTML = "Delete&nbsp;it!";
   del.addEventListener("click", () => {
     removeFromLocal(short);
-    li.style = "margin-left:200vw; opacity:0";
+    li.style = "margin-left:300vw; opacity:0";
     goUp(short)
     setTimeout(()=>{
       li.remove()
@@ -114,7 +133,7 @@ const goUp = short =>{
       maxIndex = index;
     }
   })
-  console.log(arr,maxIndex)
+  // console.log(arr,maxIndex)
   for(let i=maxIndex+1;i<items.length;i++){
     items[i].style="transform: translateY(-94px); transition:  1s;"
     setTimeout(()=>{
@@ -197,5 +216,4 @@ const removeFromLocal = (short) => {
   curr = curr.filter(notCopy)
   console.log(curr)
   localStorage.setItem("pages", JSON.stringify(curr));
-  
 };
