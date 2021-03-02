@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack src/js/app.js dist/bundle.js"
-
   },
   "repository": {
     "type": "git",
@@ -21,5 +20,8 @@
   "homepage": "https://github.com/amikus123/url-shotnerer#readme",
   "devDependencies": {
     "webpack": "^5.24.2"
+  },
+  "dependencies": {
+    "clipboard": "^2.0.6"
   }
 }

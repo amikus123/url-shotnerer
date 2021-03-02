@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
 
   <link rel="stylesheet" href="./style.css">
+  <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.3/clipboard.min.js"></script>
+
 
 </head>
 <body id="body">
@@ -52,17 +54,19 @@
     <article class="shortener">
       <div class="white"></div>
       <form action="" id="form">   
-        <div class="input-trick">
+        <div class="input-trick" id="trick">
           <input type="text" autocomplete ="off"placeholder="Shorten a link here..." id="text">
         </div>
         <button type="submit" id="short-but" class="square">Shorten&nbsp;it!</button>
 
      </form>
+<div class="loading" id="loading">
 
+</div>
     <ul class="link-list" id="list">
       <!-- <li class="saved-link">
         <span class="first-link">https://javascript.info/fetch</span>
-        <span class="second-link">https://javascript.info/fetch</span>
+        <span class="second-link copy"> https://javascript.info/fetch</span>
         <button class="square copy">Copy&nbsp;it!</button>
         <button  class="square red delete" >Delete&nbsp;it!</button>
 
@@ -122,6 +126,7 @@
   Careers
   Contact -->
  </main>
-  <script src="src/js/app.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script>
+ <script src="src/js/app.js"></script>
 </body>
 </html>

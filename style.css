@@ -344,7 +344,7 @@ main {
 }
 .square:hover,
 .square:focus {
-  background-color: var(--VDBlue);
+  background-color: var(--cyan);
 }
 #short-but:hover,#short-but:focus {
   background-color: #f1f1f1;
@@ -377,7 +377,23 @@ form .input-trick {
   align-items: center;
   border-radius: 10px;
 }
+.input-error{
+  border: 2px solid var(--red);
+  position: relative;
+  color: rgb(255, 0, 0)!important;;
+}
+.input-error:after{
+  content: 'Please enter valid link';
+  font-size:14px;
+  font-style: italic;
+  position: absolute;
+  display: inline-block;
+  left: 0;  
+  bottom: -30px;
+
+}
 form input {
+  color: inherit;
   border-radius: inherit;
   width: 95%;
   height: 90%;
@@ -386,6 +402,7 @@ form input {
   font-size: 20px;
 }
 form input::placeholder {
+  color: inherit;
   opacity: 0.7;
 }
 form .square {
@@ -395,6 +412,37 @@ form .square {
   font-weight: 700;
   height: 52px;
 }
+.loading {
+  width: 100%;
+  display: inline-block;
+  /* height: 80px; */
+  margin: 0 auto;
+  position: relative;
+  visibility: hidden;
+}
+.loading:after {
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  border-color: var(--DViolet) transparent var(--DViolet) transparent;
+  animation: loading 1.2s linear infinite;
+}
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .link-list {
   position: relative;
   display: flex;
